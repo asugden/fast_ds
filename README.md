@@ -16,3 +16,12 @@ Data science at high speed
 # 1. Create models
 
 Structure in five functions for reuse
+
+# 2. Groupby-apply + Github
+
+1. Create a new repository and add your model creation code
+2. Create categorical variables in your data
+3. Use groupby-apply in 3 ways: Series vs. DataFrame, as a "reduce". In the case of map, you can just run groupby().apply()
+   - https://realpython.com/pandas-groupby/
+   - https://www.youtube.com/watch?v=qy0fDqoMJx8
+4. Test out the idea of a class
