@@ -1,0 +1,11 @@
+{
+    "python.defaultInterpreterPath": "/Users/arthur/teaching/fast_ds/venv/bin/python",
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#599d15"
+    },
+    "editor.guides.bracketPairs": "active",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    }
+}
