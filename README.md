@@ -25,3 +25,9 @@ Structure in five functions for reuse
    - https://realpython.com/pandas-groupby/
    - https://www.youtube.com/watch?v=qy0fDqoMJx8
 4. Test out the idea of a class
+
+## SQL
+
+### Directly calling SQL
+
+### Using SQLAlchemy/Pandas

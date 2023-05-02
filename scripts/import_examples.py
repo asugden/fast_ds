@@ -2,6 +2,7 @@ import pandas as pd
 
 from fast_ds import functional_xgb_model_creator as func
 from fast_ds import model_pipeline
+from fast_ds.functional_xgb_model_creator import assess
 
 # Option 1 is running this as a script
 df = func.read_data('data/boston_house_prices.csv')
