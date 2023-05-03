@@ -12,7 +12,7 @@ import sqlite3
 recovery_level = '''
 CREATE TABLE recovery IF NOT EXISTS {
     id INTEGER PRIMARY KEY,  
-    color VARCHAR(10) NOT NULL,
+    color VARCHAR(10) UNIQUE NOT NULL,
     description VARCHAR(250)
 };
 '''
@@ -25,7 +25,7 @@ CREATE TABLE timepoints IF NOT EXISTS {
     id INTEGER PRIMARY KEY,
     timestamp DATETIME,
     heartrate FLOAT NOT NULL,
-    recovery INTEGER REFERENCES recovery(id)
+    recovery_id INTEGER REFERENCES recovery(id)
 }
 '''
 
