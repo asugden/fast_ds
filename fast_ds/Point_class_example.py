@@ -1,3 +1,4 @@
+import sqlite3
 from dataclasses import dataclass
 
 # This is a class, so the file and class name are capitalized
