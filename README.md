@@ -41,6 +41,10 @@ Interact with SQL in three ways:
 
 ### Directly calling SQL
 
+For Sqlite, use `INSERT OR IGNORE INTO` rather than `ON CONFLICT IGNORE` or `ON CONFLICT DO NOTHING`
+
+Also can use `table_id INTEGER REFERENCES table(id)`
+
 ### Using SQLAlchemy/Pandas
 
 Note that Pandas and SQLAlchemy have different versions, so sometimes you cannot directly use the engine.
