@@ -28,6 +28,32 @@ Structure in five functions for reuse
 
 ## SQL
 
+Interact with SQL in three ways:
+
+1. Using Beekeeper Studio https://github.com/beekeeper-studio/beekeeper-studio/releases/tag/v3.9.9 and directly calling SQL
+2. Calling SQL queries using sqlite connections and cursors
+3. Using Pandas via SQLAlchemy
+
+4. Take an existing dataset, fda_data.csv, and separate it into a relational model of companies (applicant in the data) and drugs (both proper_name and proprietary_name).
+
+- Can you do it both via Python and SQL?
+- Which approach is better for a large-scale database?
+
 ### Directly calling SQL
 
 ### Using SQLAlchemy/Pandas
+
+Note that Pandas and SQLAlchemy have different versions, so sometimes you cannot directly use the engine.
+
+Rather than:
+
+```
+df.to_sql('raw', engine, index=False, if_exists='append')
+```
+
+Use:
+
+```
+with engine.connect() as conn:
+   df.to_sql('raw', conn, index=False, if_exists='append')
+```
