@@ -61,3 +61,21 @@ Use:
 with engine.connect() as conn:
    df.to_sql('raw', conn, index=False, if_exists='append')
 ```
+
+## Entity resolution/deduplication
+
+Strings can overlap in the following ways (amongst many):
+
+1. One string is a substring. If Janssen is there, and Janssen Pharmaceuticals, that's a comfortable overlap.
+2. Fraction of words that overlap
+3. Number of changes to get from one string to another (Levenshtein distance and my preferred one, Jarowinkler similarity/distance) `conda install jarowinkler`
+4. Consider `fuzzywuzzy`
+5. XGBoost?
+6. How do we generate features and labels using only a list of companies
+7. Consider sets
+
+### Output
+
+A bridge table, which connects one id to another. It's just a list of pairs of ids.
+
+Connect one id from a company table to another id.
