@@ -83,13 +83,14 @@ Connect one id from a company table to another id.
 ### Creating labels
 
 1. Manually get a set of easy matches and nonmatches
-   - Can even make them up
+   - Can even make them up (10-30 examples)
    - Three columns: name1, name2, ismatch
 2. Calculate features from the names in 1
 3. Train an xgboost model from the output of 2
-4. Run the xgboost model on a big batch of data, predicting proba
+4. Run the xgboost model on a big batch of data (100?, 1000?, 10_000?), predicting proba
 5. Sample 3 examples from each chunk 0-0.1, 0.1-0.2, 0.2-0.3...
    - This is making it so that we actually find the hardest examples, but keep a few easy ones
 6. Hand-check the output of 5 to create the final xgboost training set
 7. Use the output of 6 to create the final xgboost entity resolution model
 8. Run the xgboost model on everything, saving ismatch where it is true, and save the ids of the two names that did match
+9. Bridge table is the one place without primary key id, because it's not necessary, but it instead references two other tables to describe pairs
